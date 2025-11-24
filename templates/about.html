@@ -1,0 +1,26 @@
+{% extend 'base.html' %}
+{% block content %}
+{% load static%}
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-4 text-center">
+            <img src="{% static 'images/nobody.jpg' %}" width="75%"
+                alt="About Me Image">
+        </div>
+        <div class="col-8">
+            <!-- Title goes between these h2 tags -->
+            <h2>{{about.title}}</h2>
+            <!-- Content goes between these p tags -->
+            {{about.content|safe}}
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col-12 text-right">
+            <!-- Updated field goes here -->
+
+            <p class = "text-end"><em>Last updated on: {{about.updated_on}}</em></p>
+        </div>
+    </div>
+</div>
+{% endblock content %}
